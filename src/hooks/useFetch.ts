@@ -25,7 +25,6 @@ export default function useFetch(props: UserFetchProps) {
             setResponse(json);
           }
         } catch (e) {
-            console.log("++++++", e)
           setError(e);
         }
         setLoading(false);
