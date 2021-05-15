@@ -1,7 +1,10 @@
+import { IOffer } from 'src/interfaces/IOffer';
 import './ListItem.scss';
 
-export default function ListItem () {
+export default function ListItem (props: IOffer) {
     return (
-        <h1>List Item</h1>
+        <div className="list-item">
+
+        </div>
     );
 }

@@ -1,0 +1,4 @@
+.list-item {
+    @include box-shadow;
+    background-color: $white;
+}

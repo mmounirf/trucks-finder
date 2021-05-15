@@ -38,3 +38,7 @@
 
   }
 }
+
+@mixin card-shadow {
+  box-shadow: 3px 3px 22px 0 rgb(0 0 0 / 14%);
+}
