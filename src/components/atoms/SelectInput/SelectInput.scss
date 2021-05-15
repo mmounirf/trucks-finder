@@ -1,0 +1,79 @@
+@import "../../../style/varibles.scss";
+@import "../../../style/mixins.scss";
+
+.select-input {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid $primary-color-dark;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    min-width: 250px;
+
+    &__selected {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &:hover {
+        color: $white;
+        background-color: $primary-color-dark;
+
+        .icon {
+            path {
+                fill: $white;
+            }
+        }
+
+        &::after {
+            background-color: $primary-color-dark;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 10px;
+        background-color: $white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px;
+    }
+
+    &__options {
+        width: calc(100% + 2px);
+        overflow: hidden;
+        position: absolute;
+        background-color: $secondary-color;
+        border: 1px solid $primary-color-dark;
+        border-radius: $border-radius;
+        transform: translate(-21px, 26px);
+        display: none;
+
+        &--opened {
+            display: block;
+        }
+
+
+
+        .option {
+            padding: 10px 20px;
+            color: $primary-color-dark;
+            @include smooth-transition(background-color);
+
+            &:hover {
+                color: $white;
+                background-color: $primary-color-dark;
+            }
+            &--pressed {
+                color: $primary-color-dark;
+                background-color: $secondary-color-dark;
+            }
+        }
+    }
+
+
+}

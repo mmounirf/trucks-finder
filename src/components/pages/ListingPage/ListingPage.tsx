@@ -3,9 +3,8 @@ import './ListingPage.scss';
 
 export default function ListingPage () {
     return (
-        <main>
+        <main className="listing-page">
             <ListingHeader/>
-            <h1>Listing Items</h1>
         </main>
     );
 }

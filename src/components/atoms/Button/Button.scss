@@ -1,0 +1,11 @@
+@import '../../../style/varibles.scss';
+
+.button {
+    height: 100%;
+    background-color: $primary-color-dark;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    padding: 10px 30px;
+    cursor: pointer;
+}

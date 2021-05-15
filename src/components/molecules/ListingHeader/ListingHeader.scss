@@ -1,0 +1,44 @@
+@import "../../../style/mixins.scss";
+
+.listing-header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 150px;
+
+    &__search, &__sorting {
+        width: 100%;
+        @include media(desktop) {
+            width: 50%;
+        }
+    }
+
+    align-items: center;
+
+    .search {
+        
+        &__button {
+            margin-left: 20px;
+            width: 120px;
+        }
+
+        &__input {
+            width: calc(100% - 140px);
+
+            @include media(desktop) {
+                width: 200px;
+            }
+        }
+
+    }
+
+    &__sorting {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .label {
+            margin-right: 20px;
+        }
+    }
+}

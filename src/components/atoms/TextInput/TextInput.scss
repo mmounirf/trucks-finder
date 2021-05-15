@@ -1,0 +1,8 @@
+@import '../../../style/varibles.scss';
+
+.text-input {
+    background-color: $secondary-color;
+    border: 1px solid $primary-color-dark;
+    border-radius: $border-radius;
+    padding: 10px 10px;
+}
