@@ -1,0 +1,13 @@
+@import '../../../style/varibles.scss';
+
+.tag {
+    border-radius: $border-radius;
+    background-color: $tag-color;
+    color: $primary-color-dark;
+    font-size: 10px;
+    font-weight: bolder;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 2px 10px;
+
+}

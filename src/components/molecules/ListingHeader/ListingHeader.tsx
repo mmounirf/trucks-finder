@@ -1,10 +1,11 @@
+import { memo } from 'react';
 import Button from 'src/components/atoms/Button/Button';
 import SelectInput from 'src/components/atoms/SelectInput/SelectInput';
 import { SortingOptions } from 'src/constants/SortingOptions';
 import TextInput from '../../atoms/TextInput/TextInput';
 import './ListingHeader.scss';
 
-export default function ListingHeader () {
+function ListingHeader () {
     return (
         <header className="listing-header">
             <div className="listing-header__search">
@@ -18,3 +19,5 @@ export default function ListingHeader () {
         </header>
     );
 }
+
+export default memo(ListingHeader)

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { IOffer } from '../interfaces/IOffer';
 
 interface UserFetchProps {
     url: string;
@@ -7,7 +8,7 @@ interface UserFetchProps {
 
 export default function useFetch(props: UserFetchProps) {
     const { url, options } = props;
-    const [response, setResponse] = useState();
+    const [response, setResponse] = useState<Array<IOffer> | undefined>();
     const [error, setError] = useState<unknown>();
     const [loading, setLoading] = useState(true);
   
@@ -30,7 +31,7 @@ export default function useFetch(props: UserFetchProps) {
         setLoading(false);
       }
       fetchData();
-    }, []);
+    }, [url, options]);
   
     return { response, error, loading };
   }

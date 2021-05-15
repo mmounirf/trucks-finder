@@ -32,7 +32,7 @@ export default function SelectInput(props: SelectInputProps) {
   return (
     <div className="select-input" onClick={toggleSelectInput}>
       <div className="select-input__selected">
-        <span className="label">{selectedOption?.label ?? "Select Sorting Criteria"}</span>
+        <span className="label">{selectedOption?.label ?? "Sorting Criteria"}</span>
         <ChevronIcon direction={isOpen ? ChevronDirection.UP : ChevronDirection.DOWN} className="icon"/>
       </div>
       <div

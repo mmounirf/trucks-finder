@@ -1,0 +1,39 @@
+@import '../../../style/varibles.scss';
+
+.details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-bottom: 4px solid $light-gray;
+
+    &__title {
+        font-size: 20px;
+        color: $primary-color;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: bold;
+        height: 100%;
+        margin-top: 40px;
+        
+        .code {
+            color: $light-gray;
+        }
+
+        .location {
+            display: flex;
+            align-items: flex-end;
+            color: $primary-color;
+        }
+    }
+}
