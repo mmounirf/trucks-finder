@@ -1,0 +1,8 @@
+@import "./style/varibles.scss";
+
+.app {
+    display: grid;
+    grid-template-areas: "sidebar-menu main";
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+}
