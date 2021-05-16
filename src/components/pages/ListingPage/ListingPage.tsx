@@ -2,10 +2,10 @@ import useFetch from 'src/hooks/useFetch';
 import Alert from 'src/components/atoms/Alert/Alert';
 import ListingHeader from 'src/components/molecules/ListingHeader/ListingHeader';
 import ListItem from 'src/components/organisms/ListItem/ListItem';
+import { IOffer } from 'src/interfaces/IOffer';
 import { GET_ACTIVE_OFFERS } from 'src/constants/Api';
 import './ListingPage.scss';
-import { memo } from 'react';
-import { IOffer } from 'src/interfaces/IOffer';
+
 
 
 const options: RequestInit = {
@@ -16,7 +16,7 @@ const options: RequestInit = {
     }
 }
 
-function ListingPage () {
+export default function ListingPage () {
     const {response, error, loading} = useFetch({url: GET_ACTIVE_OFFERS, options});
     const _renderOffersList = () => {
         if(!response || loading) {
@@ -38,5 +38,3 @@ function ListingPage () {
         </main>
     );
 }
-
-export default memo(ListingPage)

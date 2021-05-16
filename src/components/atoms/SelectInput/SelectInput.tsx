@@ -5,7 +5,7 @@ import "./SelectInput.scss";
 
 interface SelectInputProps {
   options: Array<ISelectOption>;
-  onChange: (option: ISelectOption | null) => void;
+  onChange: (optionId: string) => void;
 }
 
 export default function SelectInput(props: SelectInputProps) {
@@ -20,6 +20,7 @@ export default function SelectInput(props: SelectInputProps) {
       setSelectedOption(option);
       toggleSelectInput();
     };
+
     return selectOptions.map((option: ISelectOption) => (
       <div className={`${selectedOption?.id === option.id ? 'option option--pressed' : 'option'}`} key={option.id} onClick={() => onOptionClick(option)}>
         {option.label}
@@ -27,7 +28,11 @@ export default function SelectInput(props: SelectInputProps) {
     ));
   };
 
-  useEffect(() => onChange(selectedOption), [selectedOption, onChange]);
+  useEffect(() => {
+    if(selectedOption) {
+      onChange(selectedOption.id);
+    }
+  }, [selectedOption, onChange])
 
   return (
     <div className="select-input" onClick={toggleSelectInput}>
