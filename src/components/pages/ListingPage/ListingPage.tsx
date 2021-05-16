@@ -22,6 +22,7 @@ export default function ListingPage () {
     const [offers, setOffers] = useState<Array<IOffer> | undefined>();
     const [filteredOffers, setFilteredOffers] = useState<Array<IOffer> | []>([]);
     const [searchTerm, setSearchTerm] = useState<string>("");
+    const [sortField, setSortField] = useState<SortBy | undefined>();
 
     const getFilteredOffers = () => {
         const searchValue = searchTerm.toLocaleLowerCase();
@@ -39,13 +40,35 @@ export default function ListingPage () {
         });
     };
 
+    const handleSearch = (searchValue: string) => setSearchTerm(searchValue);
+    const handleSorting = (sortBy: SortBy) => setSortField(sortBy);
+
+    const getSortedOffers = () => {
+        const offersToSort = [...filteredOffers];
+
+        switch (sortField) {
+            case SortBy.HIGHEST_BID:
+                return offersToSort.sort((a, b) => b.highestBid - a.highestBid);
+            case SortBy.LOWEST_BID:
+                return offersToSort.sort((a, b) => a.highestBid - b.highestBid);
+            case SortBy.NEWEST:
+                return offersToSort.sort((a, b) => new Date(b.offerPublicationDate).getTime() - new Date(a.offerPublicationDate).getTime());
+            case SortBy.OLDEST:
+                return offersToSort.sort((a, b) => new Date(a.offerPublicationDate).getTime() - new Date(b.offerPublicationDate).getTime());
+            default:
+                return offersToSort;
+        }
+    }
+
+    useEffect(() => {
+        setFilteredOffers(getSortedOffers())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [sortField]);
+
     useEffect(() => {
         setFilteredOffers(getFilteredOffers())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchTerm])
-
-    const handleSearch = (searchValue: string) => setSearchTerm(searchValue);
-    const handleSorting = (sortBy: SortBy) => console.log(sortBy);
 
     useEffect(() => {
         setOffers(response);

@@ -5,7 +5,7 @@ export enum SortBy {
     HIGHEST_BID = 'HIGHEST_BID',
     NEWEST = 'NEWEST',
     OLDEST = 'OLDEST'
-}
+};
 
 export const SortingOptions: Array<ISelectOption> = [
     {id: SortBy.LOWEST_BID, label: 'Lowest Bid'},
