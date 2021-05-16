@@ -1,8 +1,16 @@
 import { ISelectOption } from "src/interfaces/SelectOptionInterface";
 
+export enum SortBy {
+    LOWEST_BID = 'LOWEST_BID',
+    HIGHEST_BID = 'HIGHEST_BID',
+    NEWEST = 'NEWEST',
+    OLDEST = 'OLDEST'
+}
+
 export const SortingOptions: Array<ISelectOption> = [
-    {id: 'lowestBid', label: 'Lowest Bid'},
-    {id: 'highestBid', label: 'Highest Bid'},
-    {id: 'newest', label: 'Newest Publishings'},
-    {id: 'oldest', label: 'Oldest Publishings'},
-]
+    {id: SortBy.LOWEST_BID, label: 'Lowest Bid'},
+    {id: SortBy.HIGHEST_BID, label: 'Highest Bid'},
+    {id: SortBy.NEWEST, label: 'Newest Publishings'},
+    {id: SortBy.OLDEST, label: 'Oldest Publishings'},
+];
+

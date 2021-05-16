@@ -1,4 +1,5 @@
 @import '../../../style/varibles.scss';
+@import '../../../style/mixins.scss';
 
 .button {
     height: 100%;
@@ -8,4 +9,9 @@
     border-radius: $border-radius;
     padding: 10px 30px;
     cursor: pointer;
+    @include smooth-transition(background-color);
+
+    &:hover {
+        background-color: $black;
+    }
 }

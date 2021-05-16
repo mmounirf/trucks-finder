@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { ISelectOption } from "src/interfaces/SelectOptionInterface";
 import ChevronIcon, { ChevronDirection } from "../ChevronIcon/ChevronIcon";
+import { SortBy } from 'src/constants/SortingOptions';
 import "./SelectInput.scss";
 
 interface SelectInputProps {
   options: Array<ISelectOption>;
-  onChange: (optionId: string) => void;
+  onChange: (optionId: SortBy) => void;
 }
 
 export default function SelectInput(props: SelectInputProps) {
@@ -30,7 +31,7 @@ export default function SelectInput(props: SelectInputProps) {
 
   useEffect(() => {
     if(selectedOption) {
-      onChange(selectedOption.id);
+      onChange(SortBy[selectedOption.id as keyof typeof SortBy]);
     }
   }, [selectedOption, onChange])
 

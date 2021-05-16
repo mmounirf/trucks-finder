@@ -1,4 +1,5 @@
 @import "../../../style/varibles.scss";
+@import "../../../style/mixins.scss";
 
 .sidebar-menu {
     background-color: $primary-color-dark;
@@ -19,6 +20,11 @@
             padding: 10px 20px;
             margin-bottom: 10px;
             font-size: 12px;
+            @include smooth-transition(background-color);
+
+            &:hover {
+                background-color: $nav-item-hover-color;
+            }
         }
     }
 }

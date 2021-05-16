@@ -24,10 +24,6 @@
 
         &__input {
             width: calc(100% - 140px);
-
-            @include media(desktop) {
-                width: 334px;
-            }
         }
 
     }
